@@ -34,7 +34,7 @@ export const RestrictedContent: React.FC<{
       setIsLoading(true)
 
       try {
-        const restrictedContent = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql`, {
+        const restrictedContent = await fetch(`${process.env.NEXT_SERVER_URL}/api/graphql`, {
           method: 'POST',
           credentials: 'include',
           headers: {
