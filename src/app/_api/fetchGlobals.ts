@@ -2,9 +2,9 @@ import type { Footer, Header } from '../../payload/payload-types'
 import { FOOTER_QUERY, HEADER_QUERY } from '../_graphql/globals'
 
 export async function fetchHeader(): Promise<Header> {
-  if (!process.env.NEXT_SERVER_URL) throw new Error('NEXT_SERVER_URL not found')
+  if (!process.env.SERVER_URL) throw new Error('SERVER_URL not found')
 
-  const header = await fetch(`${process.env.NEXT_SERVER_URL}/api/graphql`, {
+  const header = await fetch(`${process.env.SERVER_URL}/api/graphql`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -26,9 +26,9 @@ export async function fetchHeader(): Promise<Header> {
 }
 
 export async function fetchFooter(): Promise<Footer> {
-  if (!process.env.NEXT_SERVER_URL) throw new Error('NEXT_SERVER_URL not found')
+  if (!process.env.SERVER_URL) throw new Error('SERVER_URL not found')
 
-  const footer = await fetch(`${process.env.NEXT_SERVER_URL}/api/graphql`, {
+  const footer = await fetch(`${process.env.SERVER_URL}/api/graphql`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

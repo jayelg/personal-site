@@ -6,8 +6,6 @@ import { PayloadAdminBar, PayloadAdminBarProps } from 'payload-admin-bar'
 
 import { useAuth } from '../../_providers/Auth'
 
-// import classes from './index.module.scss'
-
 const collectionLabels = {
   pages: {
     singular: 'Page',
@@ -57,7 +55,7 @@ export const AdminBar: React.FC<{
           plural: collectionLabels[collection]?.plural || 'Pages',
         }}
         key={user?.id} // use key to get the admin bar to re-run its `me` request
-        cmsURL={process.env.NEXT_SERVER_URL}
+        cmsURL={process.env.SERVER_URL}
         logo={<Title />}
         // style={{
         //   position: 'relative',

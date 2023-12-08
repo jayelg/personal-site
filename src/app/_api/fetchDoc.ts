@@ -33,7 +33,7 @@ export const fetchDoc = async <T>(args: {
     token = cookies().get(payloadToken)
   }
 
-  const doc: T = await fetch(`${process.env.PAYLOAD_SERVER_URL}/api/graphql`, {
+  const doc: T = await fetch(`${process.env.SERVER_URL}/api/graphql`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -50,9 +50,10 @@ export const fetchDoc = async <T>(args: {
   })
     ?.then(res => res.json())
     ?.then(res => {
-      if (res.errors) throw new Error(res?.errors?.[0]?.message ?? 'Error fetching doc')
+      if (res.errors) {
+        throw new Error(res?.errors?.[0]?.message ?? 'Error fetching doc')
+      }
       return res?.data?.[queryMap[collection].key]?.docs?.[0]
     })
-
   return doc
 }

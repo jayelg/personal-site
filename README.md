@@ -1,4 +1,4 @@
-# johngrant.dev personal site
+# Personal Site
 
 This is the repo for my personal site.
 This project was initially based on the [Payload Website Template](https://github.com/payloadcms/payload/blob/main/templates/website) which provided sensible defaults to build from. Payload is a headless CMS that provides a code first developer experience and is built with Node.js using Typescript. I chose it as it provided the functionality I was looking for out of the box while still allowing for easy extensibility.

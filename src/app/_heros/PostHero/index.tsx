@@ -74,7 +74,7 @@ export const PostHero: React.FC<{
           <div>
             <p className="m-0">
               {`${description ? `${description} ` : ''}To edit this post, `}
-              <Link href={`${process.env.NEXT_SERVER_URL}/admin/collections/posts/${id}`}>
+              <Link href={`${process.env.SERVER_URL}/admin/collections/posts/${id}`}>
                 navigate to the admin dashboard
               </Link>
               {'.'}
