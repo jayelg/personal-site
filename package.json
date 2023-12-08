@@ -1,6 +1,6 @@
 {
-  "name": "johngrant-dev",
-  "description": "Website template for Payload",
+  "name": "personal-website",
+  "description": "",
   "version": "1.0.0",
   "main": "dist/server.js",
   "license": "MIT",
@@ -11,7 +11,7 @@
     "build:server": "tsc --project tsconfig.server.json",
     "build:next": "cross-env PAYLOAD_CONFIG_PATH=dist/payload/payload.config.js NEXT_BUILD=true node dist/server.js",
     "build": "cross-env NODE_ENV=production yarn build:payload && yarn build:server && yarn copyfiles && yarn build:next",
-    "serve": "cross-env PAYLOAD_CONFIG_PATH=dist/payload/payload.config.js NODE_ENV=production node dist/server.js",
+    "serve": "cross-env PAYLOAD_CONFIG_PATH=dist/payload/payload.config.js payload migrate && cross-env PAYLOAD_CONFIG_PATH=dist/payload/payload.config.js NODE_ENV=production node dist/server.js",
     "eject": "yarn remove next react react-dom @next/eslint-plugin-next && ts-node eject.ts",
     "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png,js}\" dist/",
     "generate:types": "cross-env PAYLOAD_CONFIG_PATH=src/payload/payload.config.ts payload generate:types",
@@ -23,10 +23,8 @@
   "dependencies": {
     "@payloadcms/bundler-webpack": "^1.0.0",
     "@payloadcms/db-postgres": "^0.x",
-    "@payloadcms/plugin-form-builder": "^1.0.15",
     "@payloadcms/plugin-nested-docs": "^1.0.9",
     "@payloadcms/plugin-redirects": "^1.0.1",
-    "@payloadcms/plugin-search": "^1.0.1",
     "@payloadcms/plugin-seo": "^1.0.13",
     "@payloadcms/richtext-lexical": "^0.2.0",
     "@react-spring/web": "^9.7.3",
