@@ -52,7 +52,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.SERVER_URL),
+  metadataBase: new URL(process.env.PAYLOAD_PUBLIC_SERVER_URL),
   twitter: {
     card: 'summary_large_image',
     creator: '@payloadcms',

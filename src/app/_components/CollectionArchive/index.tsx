@@ -120,7 +120,9 @@ export const CollectionArchive: React.FC<Props> = props => {
 
       const makeRequest = async () => {
         try {
-          const req = await fetch(`${process.env.SERVER_URL}/api/${relationTo}?${searchQuery}`)
+          const req = await fetch(
+            `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/${relationTo}?${searchQuery}`,
+          )
           const json = await req.json()
           clearTimeout(timer)
           hasHydrated.current = true

@@ -65,7 +65,7 @@ export default buildConfig({
       connectionString: `postgres://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_DOCKER_DOMAIN}/${process.env.PAYLOAD_DB}`,
     },
   }),
-  serverURL: process.env.SITE_URL,
+  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections: [Pages, Posts, Media, Categories, Keywords, Users],
   globals: [Header, Footer],
   typescript: {
@@ -74,8 +74,8 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
-  cors: [`${process.env.SITE_URL}`].filter(Boolean),
-  csrf: [`${process.env.SITE_URL}`].filter(Boolean),
+  cors: [`${process.env.PAYLOAD_PUBLIC_SERVER_URL}`].filter(Boolean),
+  csrf: [`${process.env.PAYLOAD_PUBLIC_SERVER_URL}`].filter(Boolean),
   // endpoints: [
   //   // The seed endpoint is used to populate the database with some example data
   //   // You should delete this endpoint before deploying your site to production
